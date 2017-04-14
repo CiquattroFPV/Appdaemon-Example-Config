@@ -1,0 +1,66 @@
+title: Camera Stream
+widget_dimensions: [110, 115]
+widget_margins: [5, 5]
+columns: 8
+
+layout:
+    - clock (2x1)   ,device_tracker.nico_nico, device_tracker.mamma_mamma, device_tracker.iphonemarie
+    - camera_R2(5x3)      
+    -
+    -
+    - load_main_panel(2x1),        Lights(2x1),          camera(2x1),         reload(2x1)
+
+clock:
+    widget_type: clock
+    time_format: 24hr
+
+mode:
+    widget_type: device_tracker
+    title: Arnaud
+    device: hokagegano_r7sf
+    icon_on: fa-male
+    icon_off: fa-male
+
+tempext:
+    widget_type: sensor
+    title: Temperature Exterieure
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.tempext_temperature
+
+alarmsensor:
+    widget_type: sensor
+    title: Etat de l'alarme
+    entity: sensor.alarmsensor
+
+camera_R2:
+    widget_type: iframe
+    title: Camera R2 Salone
+    refresh: 20
+    frame_style: ""
+    img_list: 
+      - 
+
+load_main_panel:
+    widget_type: navigate
+    title: Main Panel
+    icon_active: mdi-home
+    icon_inactive: mdi-home
+    url: /HomeAssistant
+
+Lights:
+    widget_type: navigate
+    title: Lights
+    icon_active: mdi-lightbulb
+    icon_inactive: mdi-lightbulb
+    url: /Lights
+
+camera:
+    widget_type: navigate
+    title: Camera
+    icon: fa-bed
+    url: /Camera
+
+reload:
+    widget_type: reload
+    title: Reload

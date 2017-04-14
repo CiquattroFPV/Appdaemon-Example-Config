@@ -1,0 +1,175 @@
+title: Main Panel
+widget_dimensions: [110, 115]
+widget_margins: [5, 5]
+columns: 8
+
+layout:
+    - clock(2x1), temperatureext, humidity, pressure, condition, wind, rain
+    - device_tracker.nico_nico, batt_nico, device_tracker.mamma_mamma, batt_mamma, device_tracker.iphonemarie, cook
+    - media_player.sony_bravia_tv(4x2), airconditioner, wol_nicopc, wol_dsm01
+    - st_download, st_upload, st_ping
+    - load_main_panel(2x1),        Lights(2x1),          camera(2x1),         reload(2x1)
+
+
+clock:
+    widget_type: clock
+    time_format: 24hr
+
+weather:
+    widget_type: weather
+    units: "&deg;C"
+
+nico:
+    widget_type: device_tracker
+    title: Nico
+    device: nico_nico
+    icon_on: mdi-human-male
+    icon_off: mdi-human-male
+
+batt_nico:
+    widget_type: sensor
+    title: Batteria Tel Nico
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.batteria_telefono_nico
+
+mamma:
+    widget_type: device_tracker
+    title: Mamma
+    device: mamma_mamma
+    icon_on: mdi-human-female
+    icon_off: mdi-human-female
+
+batt_mamma:
+    widget_type: sensor
+    title:  Batteria Tel Mamma
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.batteria_telefono_mamma
+
+Maria:
+    widget_type: device_tracker
+    title: ArMarianaud
+    device: iphonemarie
+    icon_on: mdi-human-female
+    icon_off: mdi-human-female
+
+airconditioner:
+    widget_type: switch
+    title: Air Conditioner - Heat 30
+    icon_on: mdi-air-conditioner
+    icon_off: mdi-air-conditioner
+    entity: switch.air_conditioner__heat_30
+
+temperatureext:
+    widget_type: sensor
+    title: Temperatura Esterna
+    units: "&deg;C"
+    precision: 0
+    entity: sensor.owm_temperature
+
+humidity:
+    widget_type: sensor
+    title: Umidità Esterna
+    units: "%"
+    precision: 0
+    entity: sensor.owm_humidity
+
+pressure:
+    widget_type: sensor
+    title: Pressione Atmosferica
+    units: "mbar"
+    precision: 0
+    entity: sensor.owm_pressure
+
+condition:
+    widget_type: text_sensor
+    title: Forecast 
+    text_style: "text-transform: lowercase;"
+    entity: sensor.owm_condition
+
+wind:
+    widget_type: sensor
+    title: Wind Speed
+    units: "m/s"
+    entity: sensor.owm_wind_speed
+
+rain:
+    widget_type: text_sensor
+    title: Rain Status
+    text_style: "text-transform: uppercase;"
+    entity: sensor.owm_rain
+
+wol_nicopc:
+    widget_type: switch
+    title: Nico PC - WoL
+    icon_on: mdi-laptop-windows
+    icon_off: mdi-laptop-windows
+    entity: switch.nicopc
+
+wol_dsm01:
+    widget_type: switch
+    title: DSM01 - WoL
+    icon_on: mdi-network
+    icon_off: mdi-network
+    entity: switch.dsm01
+   
+obright_scene:
+    widget_type: script
+    title: Lights
+    entity: script.Lights
+
+
+st_download:
+    widget_type: sensor
+    title:  Speedtest Download
+    units: "MBs"
+    precision: 0
+    entity: sensor.speedtest_download
+
+st_ping:
+    widget_type: sensor
+    title:  Ping
+    units: "ms"
+    precision: 0
+    entity: sensor.speedtest_ping
+
+st_upload:
+    widget_type: sensor
+    title:  Speedtest Upload
+    units: "MBs"
+    precision: 0
+    entity: sensor.speedtest_upload
+
+
+load_main_panel:
+    widget_type: navigate
+    title: Main Panel
+    icon_active: mdi-home
+    icon_inactive: mdi-home
+    url: /HomeAssistant
+
+Lights:
+    widget_type: navigate
+    title: Lights
+    icon_active: mdi-lightbulb
+    icon_inactive: mdi-lightbulb
+    url: /Lights
+
+camera:
+    widget_type: navigate
+    title: Camera
+    icon_active: mdi-video
+    icon_inactive: mdi-video
+    url: /Camera
+
+reload:
+    widget_type: reload
+    title: Reload
+
+cook:
+    widget_type: sensor
+    title: Cook
+    entity: input_select.who_cooks
+    icon_on: mdi-panda
+    icon_off: mdi-panda

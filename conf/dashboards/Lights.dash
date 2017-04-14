@@ -1,0 +1,103 @@
+#
+# Main arguments, all optional
+#
+title: Lights
+widget_dimensions: [120, 120]
+widget_size: [1, 1]
+widget_margins: [8, 8]
+columns: 8
+global_parameters:
+    use_comma: 0
+    precision: 1
+
+lights_Label:
+    widget_type: label
+    text:   Lights Panel
+
+scenes_Label:
+    widget_type: label
+    text:   Scenes Panel
+
+layout:
+    - lights_Label(8x1)
+    - light.lounge__sofa__rgb, light.lounge__door__rgb, light.lounge__window__white, light.room__nico__rgb, light.kitchen__white
+    - 
+    - scenes_Label(8x1)
+    - lights_on__lounge, lights_off__lounge, white__lounge, movies__lounge, romantic__lounge, tv_time, romantic__nico
+    - load_main_panel(2x1),        Lights(2x1),          camera(2x1),         reload(2x1)
+
+
+
+lights_on__lounge:
+    widget_type: scene
+    title: Light ON
+    entity: scene.lights_on__lounge
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+lights_off__lounge:
+    widget_type: scene
+    title: Light OFF
+    entity: scene.lights_off__lounge
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+movies__lounge:
+    widget_type: scene
+    title: Movie (Blue)
+    entity: scene.movies__lounge
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+white__lounge:
+    widget_type: scene
+    title: White
+    entity: scene.white__lounge
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+romantic__lounge:
+    widget_type: scene
+    title: Romantic (Red)
+    entity: scene.romantic__lounge
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+tv_time:
+    widget_type: scene
+    title: TV Time
+    entity: scene.tv_time
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+romantic__nico:
+    widget_type: scene
+    title: Romantic (Red) - Camera Nico
+    entity: scene.romantic__nico
+    icon_on: mdi-lamp
+    icon_off: mdi-lamp
+
+load_main_panel:
+    widget_type: navigate
+    title: Main Panel
+    icon_active: mdi-home
+    icon_inactive: mdi-home
+    url: /HomeAssistant
+
+Lights:
+    widget_type: navigate
+    title: Lights
+    icon_active: mdi-lightbulb
+    icon_inactive: mdi-lightbulb
+    url: /Lights
+
+camera:
+    widget_type: navigate
+    title: Camera
+    icon_active: mdi-video
+    icon_inactive: mdi-video
+    url: /Camera
+
+reload:
+    widget_type: reload
+    title: Reload
