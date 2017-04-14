@@ -7,13 +7,8 @@ This is my Appdaemon Configuration created with a Docker Installation on a Synol
 
 
 - Custom_css Nico
-![alt text](screenshots/nico.png "Screenshot Example")
+![alt text](screenshots/nico.png "Nico Default")
 
 
 - Custom_css Nicoblack
-![alt text](screenshots/ir01.png "Player View")
-
-
-- Custom_css glassic
-![alt text](screenshots/player01.png "Player View")
-
+![alt text](screenshots/ir01.png "Nico Black")
