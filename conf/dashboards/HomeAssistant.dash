@@ -29,7 +29,7 @@ nico:
 batt_nico:
     widget_type: sensor
     title: Batteria Tel Nico
-    units: "&deg;C"
+    units: "%"
     precision: 0
     entity: sensor.batteria_telefono_nico
 
@@ -43,7 +43,7 @@ mamma:
 batt_mamma:
     widget_type: sensor
     title:  Batteria Tel Mamma
-    units: "&deg;C"
+    units: "%"
     precision: 0
     entity: sensor.batteria_telefono_mamma
 
