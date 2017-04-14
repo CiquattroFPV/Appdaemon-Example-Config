@@ -7,8 +7,8 @@ This is my Appdaemon Configuration created with a Docker Installation on a Synol
 
 
 - Custom_css Nico
-![alt text](screenshots/nico.png "Nico Default")
+. ![alt text](screenshots/nico.png "Nico Default")
 
 
 - Custom_css Nicoblack
-![alt text](screenshots/nicoblack.png "Nico Black")
+. ![alt text](screenshots/nicoblack.png "Nico Black")
