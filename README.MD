@@ -11,4 +11,4 @@ This is my Appdaemon Configuration created with a Docker Installation on a Synol
 
 
 - Custom_css Nicoblack
-![alt text](screenshots/ir01.png "Nico Black")
+![alt text](screenshots/nicoblack.png "Nico Black")
